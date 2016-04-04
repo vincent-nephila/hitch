@@ -70,6 +70,7 @@ class AuthController extends Controller
     {
         $confirmation_code = str_random(30);
 
+        
         return User::create([
             'firstname' => $data['firstname'],
             'lastname' => $data['lastname'],
@@ -82,31 +83,14 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
             'confirm_code'=>$confirmation_code,
             
-            
-        ]);
-        /*
-        Mail::send('auth.register', $confirmation_code, function($message) {
-            $message->to(Input::get('email'), Input::get('username'))
-                    ->subject('Verify your email address');
-        });
         
-        Flash::message('Thanks for signing up! Please check your email.');
-        */
+        ]);
        
     }
     
-        public function postRegister(Request $request)
-    {
-        $validator = $this->validator($request->all());
 
-        if ($validator->fails()) {
-            $this->throwValidationException(
-                $request, $validator
-            );
-        }
-
-        //Auth::guard($this->getGuard())->login($this->create($request->all()));
-
-        return redirect('login');   
-    }
+     
+    
+    
+     
 }

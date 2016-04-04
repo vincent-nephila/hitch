@@ -13,15 +13,7 @@
 
 Route::group(['middleware' => ['web']], function () {
     Route::auth();
-    Route::get('/', function () {
-        return view('welcome');
-    });
-
-    
-    Route::get('/me',function(){
-        return "No";
-    });
-    
-    Route::get('/vincent','PageController@index');
-    
+    Route::get('/','MainController@index');
+    Route::post('registration','RegisterController@store');
+    Route::get('registration','RegisterController@index');
 });
