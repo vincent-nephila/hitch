@@ -29,27 +29,21 @@ class KeyGenerateCommand extends Command
      */
     public function fire()
     {
-        $app = $this->laravel;
-
-        $key = $this->getRandomKey($app['config']['app.cipher']);
+        $key = $this->getRandomKey($this->laravel['config']['app.cipher']);
 
         if ($this->option('show')) {
             return $this->line('<comment>'.$key.'</comment>');
         }
 
-        $path = $app->environmentPath().'/'.$app->environmentFile();
+        $path = base_path('.env');
 
         if (file_exists($path)) {
-            $content = str_replace('APP_KEY='.$app['config']['app.key'], 'APP_KEY='.$key, file_get_contents($path));
-
-            if (! Str::contains($content, 'APP_KEY')) {
-                $content = sprintf("%s\nAPP_KEY=%s\n", $content, $key);
-            }
-
-            file_put_contents($path, $content);
+            file_put_contents($path, str_replace(
+                'APP_KEY='.$this->laravel['config']['app.key'], 'APP_KEY='.$key, file_get_contents($path)
+            ));
         }
 
-        $app['config']['app.key'] = $key;
+        $this->laravel['config']['app.key'] = $key;
 
         $this->info("Application key [$key] set successfully.");
     }

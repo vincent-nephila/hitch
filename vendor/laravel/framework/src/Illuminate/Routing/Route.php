@@ -102,7 +102,7 @@ class Route
     /**
      * Create a new Route instance.
      *
-     * @param  array|string  $methods
+     * @param  array   $methods
      * @param  string  $uri
      * @param  \Closure|array  $action
      * @return void
@@ -520,7 +520,7 @@ class Route
     /**
      * Parse the route action into a standard array.
      *
-     * @param  callable|array|null  $action
+     * @param  callable|array  $action
      * @return array
      *
      * @throws \UnexpectedValueException

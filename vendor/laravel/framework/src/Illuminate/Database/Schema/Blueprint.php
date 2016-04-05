@@ -775,17 +775,15 @@ class Blueprint
     /**
      * Add nullable creation and update timestamps to the table.
      *
-     * Alias for self::timestamps().
-     *
      * @return void
      */
     public function nullableTimestamps()
     {
-        $this->timestamps();
+        return $this->timestamps();
     }
 
     /**
-     * Add nullable creation and update timestamps to the table.
+     * Add creation and update timestamps to the table.
      *
      * @return void
      */
@@ -934,7 +932,7 @@ class Blueprint
      * @param  array   $parameters
      * @return \Illuminate\Support\Fluent
      */
-    public function addColumn($type, $name, array $parameters = [])
+    protected function addColumn($type, $name, array $parameters = [])
     {
         $attributes = array_merge(compact('type', 'name'), $parameters);
 

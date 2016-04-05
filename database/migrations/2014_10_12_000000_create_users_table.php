@@ -17,11 +17,14 @@ class CreateUsersTable extends Migration
             $table->string('lastname');
             $table->string('firstname');
             $table->string('middlename');
-            $table->string('address');
-            $table->integer('accesslevel');
-            $table->integer('status');
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('address');
+            $table->integer('mobile');
+            $table->integer('accesslevel');
+            $table->integer('status');
+            $table->boolean('confirmed')->default(0);
+            $table->string('confirmation_code')->nullable;
             $table->rememberToken();
             $table->timestamps();
         });

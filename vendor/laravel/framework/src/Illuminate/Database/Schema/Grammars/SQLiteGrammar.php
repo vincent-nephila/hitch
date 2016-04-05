@@ -170,9 +170,7 @@ class SQLiteGrammar extends Grammar
 
         $table = $this->wrapTable($blueprint);
 
-        $index = $this->wrap($command->index);
-
-        return "create unique index {$index} on {$table} ({$columns})";
+        return "create unique index {$command->index} on {$table} ({$columns})";
     }
 
     /**
@@ -188,9 +186,7 @@ class SQLiteGrammar extends Grammar
 
         $table = $this->wrapTable($blueprint);
 
-        $index = $this->wrap($command->index);
-
-        return "create index {$index} on {$table} ({$columns})";
+        return "create index {$command->index} on {$table} ({$columns})";
     }
 
     /**
@@ -261,9 +257,7 @@ class SQLiteGrammar extends Grammar
      */
     public function compileDropUnique(Blueprint $blueprint, Fluent $command)
     {
-        $index = $this->wrap($command->index);
-
-        return "drop index {$index}";
+        return "drop index {$command->index}";
     }
 
     /**
@@ -275,9 +269,7 @@ class SQLiteGrammar extends Grammar
      */
     public function compileDropIndex(Blueprint $blueprint, Fluent $command)
     {
-        $index = $this->wrap($command->index);
-
-        return "drop index {$index}";
+        return "drop index {$command->index}";
     }
 
     /**

@@ -87,9 +87,7 @@ class SqlServerGrammar extends Grammar
 
         $table = $this->wrapTable($blueprint);
 
-        $index = $this->wrap($command->index);
-
-        return "alter table {$table} add constraint {$index} primary key ({$columns})";
+        return "alter table {$table} add constraint {$command->index} primary key ({$columns})";
     }
 
     /**
@@ -105,9 +103,7 @@ class SqlServerGrammar extends Grammar
 
         $table = $this->wrapTable($blueprint);
 
-        $index = $this->wrap($command->index);
-
-        return "create unique index {$index} on {$table} ({$columns})";
+        return "create unique index {$command->index} on {$table} ({$columns})";
     }
 
     /**
@@ -123,9 +119,7 @@ class SqlServerGrammar extends Grammar
 
         $table = $this->wrapTable($blueprint);
 
-        $index = $this->wrap($command->index);
-
-        return "create index {$index} on {$table} ({$columns})";
+        return "create index {$command->index} on {$table} ({$columns})";
     }
 
     /**
@@ -179,9 +173,7 @@ class SqlServerGrammar extends Grammar
     {
         $table = $this->wrapTable($blueprint);
 
-        $index = $this->wrap($command->index);
-
-        return "alter table {$table} drop constraint {$index}";
+        return "alter table {$table} drop constraint {$command->index}";
     }
 
     /**
@@ -195,9 +187,7 @@ class SqlServerGrammar extends Grammar
     {
         $table = $this->wrapTable($blueprint);
 
-        $index = $this->wrap($command->index);
-
-        return "drop index {$index} on {$table}";
+        return "drop index {$command->index} on {$table}";
     }
 
     /**
@@ -211,9 +201,7 @@ class SqlServerGrammar extends Grammar
     {
         $table = $this->wrapTable($blueprint);
 
-        $index = $this->wrap($command->index);
-
-        return "drop index {$index} on {$table}";
+        return "drop index {$command->index} on {$table}";
     }
 
     /**
@@ -227,9 +215,7 @@ class SqlServerGrammar extends Grammar
     {
         $table = $this->wrapTable($blueprint);
 
-        $index = $this->wrap($command->index);
-
-        return "alter table {$table} drop constraint {$index}";
+        return "alter table {$table} drop constraint {$command->index}";
     }
 
     /**

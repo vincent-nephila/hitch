@@ -7,7 +7,7 @@
 <div class="panel panel-default register">
     <div class="panel-body">
         <p>This is a text line</p>
-        <form method="POST" action="{{url('registration')}}">
+        <form method="POST" action="{{url('register')}}">
             {!!csrf_field()!!}
             <fieldset class="form-group">
               <input type="text" class="form-control" style="width: 49%;display: inline-block;" name="firstname" placeholder="First Name">              

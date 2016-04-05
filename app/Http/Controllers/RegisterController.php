@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+
 use App\User;
 
 class RegisterController extends Controller
@@ -14,7 +16,7 @@ class RegisterController extends Controller
 
 
     public function store(Request $request){
-        
+        /*
         //validation
         $this->validate($request, [
             'firstname' => 'required|max:255',
@@ -25,7 +27,7 @@ class RegisterController extends Controller
             'password' => 'required|min:6|confirmed',
         ]);
 
-        $confirmation_code = str_random(30);
+        
 
         User::create([
             'firstname' => $request->firstname,
@@ -41,14 +43,11 @@ class RegisterController extends Controller
             
         ]);
         
-        
-        Mail::send('auth.login', $confirmation_code, function($message) {
-                $message->to($request->email, $request->firstname);
+        //$confirmation_code = str_random(30);
+        Mail::send('welcome', 'check', function($message) {
+                $message->to($request->, 'John');
                 $message->subject('Verify your email address');
         });
-        
-   
-        
-        return redirect('registration')->with('success', "Hooray, things are awesome!");
+        */                
     }
 }

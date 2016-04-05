@@ -5,8 +5,6 @@
 @endif
 
 
-<b>This is home</b>
-
 <div class="content1">
 <div class="panel panel-default register">
     <div class="panel-body">
