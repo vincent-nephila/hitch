@@ -8,11 +8,13 @@ use App\Http\Requests;
 
 class MainController extends Controller
 {
-    
-    function index(){
-        //if(Auth::check()){
+    public function __construct()
+	{
+		$this->middleware('auth');
+	}
+    public function index(){
+        
             return view('auth.main');
-        //}
 
     }
 }

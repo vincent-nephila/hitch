@@ -13,7 +13,7 @@
 
 Route::group(['middleware' => ['web']], function () {
     Route::auth();
+    Route::get('register/verify/{confirmation_code}','Auth\AuthController@verifyCode');
     Route::get('/','MainController@index');
-    Route::post('registration','RegisterController@store');
-    Route::get('registration','RegisterController@index');
+    
 });

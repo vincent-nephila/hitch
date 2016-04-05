@@ -10,7 +10,7 @@
             Thanks for creating an account.
             We welcome you to Hitch.
             Please follow the link below to verify your email address
-            {{$confirm}}<br/>
+            {{URL::to('register/verify/'.$confirm)}}<br/>
 
         </div>
 

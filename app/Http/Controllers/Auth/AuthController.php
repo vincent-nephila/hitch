@@ -33,7 +33,7 @@ class AuthController extends Controller
      * @var string
      */
     protected $redirectTo = '/authenticate';
-    protected $confirmation = 8;
+    
     
     /**
      * Create a new authentication controller instance.
@@ -94,8 +94,6 @@ class AuthController extends Controller
     }
      * 
      */
-    
-
  
     public function register(Request $request) {
        
@@ -127,6 +125,16 @@ class AuthController extends Controller
        
         return redirect('register')->with('success', "Your request has been submited. Please verify your account through the email that we sent.");
     }
-        
-     
+    
+    public function verifyCode($confirmation_code){
+        $user=User::where('confirmation_code',$confirmation_code)->first();
+        if($user->confirmed==1){
+            return redirect('register')->with('error', "Invalid token");
+        }
+        else{
+            $user->confirmed=1;
+            $user->save();
+            return redirect('login')->with('success', "Your account has been confirmed");
+        }
+    }     
 }
