@@ -96,7 +96,7 @@ class AuthController extends Controller
      */
  
     public function register(Request $request) {
-       
+       /*
         $validator = $this->validator($request->all());
 
         if ($validator->fails()) {
@@ -122,7 +122,7 @@ class AuthController extends Controller
         ]);
         Mail::send('welcome',['confirm'=>$confirmation_code], function($message) {
             $message->to(Input::get('email'), Input::get('firstname'))->subject('Welcome to Hitch');});
-       
+       */
         return redirect('register')->with('success', "Your request has been submited. Please verify your account through the email that we sent.");
     }
     

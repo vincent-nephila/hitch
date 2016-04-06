@@ -13,6 +13,18 @@
 
 Route::group(['middleware' => ['web']], function () {
     Route::auth();
-Route::get('/',function(){return view('main');});
-    Route::get('register/verify/{confirmation_code}','Auth\AuthController@verifyCode');
+    //Route::get('register/verify/{confirmation_code}','Auth\AuthController@verifyCode');
+    Route::get('/',function(){
+        return view('main');
+    });
+    Route::get('registerOwner',function(){
+        return view('owner.register');
+    });
+        Route::get('registerPassenger',function(){
+        return view('passenger.register');
+    });
+    Route::post('/registerOwner','Owner\OwnerController@registerOwner');
+    Route::get('confirm/{id}/{authkey}','Owner\OwnerController@verifyCode');
+
+    
 });
