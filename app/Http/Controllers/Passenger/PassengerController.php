@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Owner;
+namespace App\Http\Controllers\Passenger;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -9,10 +9,10 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Support\Facades\Input;
 
-class OwnerController extends Controller
+class PassengerController extends Controller
 {
     //
-
+    
     public function register(Request $request){
         
         $this->validate($request, [
@@ -26,13 +26,16 @@ class OwnerController extends Controller
        
         $authkey = str_random(30);
         
+        
+        
         $user = new User;
         $user->firstname = $request->firstname;
         $user->lastname = $request->lastname;
         $user->middlename = $request->middlename;
         $user->email = $request->email;
         $user->mobile = $request->mobile;
-        $user->accesslevel = env('USER_OWNER');
+        $user->status = env('STATUS_OK');
+        $user->accesslevel = env('USER_PASSENGER');
         $user->confirmation_code=$authkey;
         $user->save();
         

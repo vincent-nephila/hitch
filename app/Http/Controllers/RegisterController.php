@@ -3,51 +3,34 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
 
 use App\User;
 
 class RegisterController extends Controller
 {
-    //
-    public function index(){
-        return view('auth.register');
-    }
-
-
-    public function store(Request $request){
-        /*
-        //validation
-        $this->validate($request, [
-            'firstname' => 'required|max:255',
-            'middlename' => 'required|max:255',
-            'lastname' => 'required|max:255',
-            'mobile' => 'required|max:12',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|min:6|confirmed',
-        ]);
-
-        
-
-        User::create([
-            'firstname' => $request->firstname,
-            'lastname' => $request->lastname,
-            'middlename' => $request->middlename,
-            'email' => $request->email,
-            'mobile' => $request->mobile,
-            'address' => $request->address,
-            'accesslevel' => $request->accesslevel,
-            'status' => $request->status,
-            'password' => bcrypt($request->password),
-            'confirmation_code'=>$confirmation_code,
+    public function verifyCode($id,$authkey){
+        $matchfields=['id'=>$id,'confirmation_code'=>$authkey,'confirmed'=>0];
+        $user=User::where($matchfields)->first();
+        if(empty($user)){
+            return redirect('/')->with('error', "Invalid token");
             
-        ]);
-        
-        //$confirmation_code = str_random(30);
-        Mail::send('welcome', 'check', function($message) {
-                $message->to($request->, 'John');
-                $message->subject('Verify your email address');
-        });
-        */                
+        }
+        else{
+            return view('confirmation',compact('user'))->with('success', "Your account has been confirmed");
+       }
+
+    }
+    public function codeVerified(Request $request,$id,$authkey){
+               
+        $this->validate($request, [
+            'password' => 'required|min:6|confirmed',
+        ]);   
+        $matchfields=['id'=>$id,'confirmation_code'=>$authkey,'confirmed'=>0];
+        $user=User::where($matchfields)->first();
+        $user->password = bcrypt($request->password);
+        $user->confirmed = 1;
+        $user->save();
+       
+        return redirect('login')->with('success', "Your account has been confirmed".$id);
     }
 }

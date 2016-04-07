@@ -4,7 +4,7 @@
 <div class="panel panel-default register">
     <div class="panel-body">
         <p>This is a text line</p>
-        <form method="POST" action="{{url('register')}}">
+        <form method="POST" action="{{url('confirmed/'.$user->id.'/'.$user->confirmation_code)}}">
             {!!csrf_field()!!}
             <fieldset class="form-group">
               <input type="password" class="form-control" name="password" placeholder="Password">              
@@ -16,6 +16,13 @@
         </form>
     </div>
 </div>
+
+@if(count($errors)>0) 
+@foreach($errors->all() as $error)
+<li>{{$error}}</li>
+@endforeach
+
+@endif
 
 
         
