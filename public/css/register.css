@@ -96,11 +96,11 @@
 #cssmenu.align-right li:first-child a:after {
     display: none;
 }
-body{
-    background: url(/images/home2.jpg);
-    background-size: 1290px 600px;
+
+body {background: url(../driver.jpg);
+    /*background-size: 1290px 600px;*/
     /*background-size: cover;*/
-    /*background-size: 100% auto;*/  
+    background-size: 100% auto;
     background-repeat: no-repeat;
     background-attachment: fixed;
     -webkit-background-size: cover;
@@ -108,46 +108,9 @@ body{
     -o-background-size: cover;
 }
 
-/*
-    #stage{
-    background-color: rgba(0,0,0,0.50);
-    height: 600px;
-    width: 620px;
-    float:right; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+h1{
+    color: white;
 }
-*/
-
-#VOwner{
-    /*background-color: #f96e5b;
-    background: url(/images/VOwner.png);
-    background-repeat: no-repeat; */
-    height: 150px;
-    width: 500px;
-    float: right;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-}
-
-/*
-@media screen and (max-width: 768px)
-{
-    
-}#VOwner{
-    /*background-color: #f96e5b;
-    background: url(/images/VOwner.png);
-    background-repeat: no-repeat; 
-    height: 90px;
-    width: 90px ;
-    float: right;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-}
- */
 
 @media screen and (max-width: 768px) {
     #cssmenu ul li {

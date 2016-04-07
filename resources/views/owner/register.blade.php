@@ -2,13 +2,25 @@
 <meta charset='utf-8'>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href= "{{asset('/css/layout.css')}}">
         <link href="{{ asset('/bootstrap/dist/css/bootstrap.css') }}" rel="stylesheet">
         <script src="{{ asset('/bootstrap/dist/js/bootstrap.js') }}"></script>
         <script src="{{ asset('/jquery/dist/js/jquery.min.js') }}"></script>
         <script src="{{ asset('/jquery/dist/jquery.slim.min.js') }}"></script>
+         <link rel="stylesheet" href= "{{asset('/css/register.css')}}">
 </head>
 <body>
+    
+    <div id='cssmenu'>
+            <ul>
+                <li class='active'><a href='#'><span>Home</span></a></li>
+                <!--<li><a href='#'><span>Products</span></a></li> -->
+                <li><a href='#'><span>Company</span></a></li>
+                <li class='last'><a href='#'><span>Contact</span></a></li>
+            </ul>
+    </div>    
+    
+    
+    
 @if (Session::has('error'))
     <div class="alert alert-success">
         <p>{{ Session::get('error') }}</p>
@@ -19,10 +31,10 @@
         <p>{{ Session::get('success') }}</p>
     </div>
 @endif
-<div class="content1">
-<div class="panel panel-default register">
-    <div class="panel-body">
-        <p>This is a text line</p>
+<div class="content1" style="padding-left: 740px; padding-top:150px; padding-right:100px;"  >
+<div class="panel panel-default register" style="background-color: rgba(0,0,0,0.5); border: none; ">
+    <div class="panel-body" style="background-color:none;">
+        <h1>Sign-Up</h1>
         <form method="POST" action="{{url('registerOwner')}}">
             {!!csrf_field()!!}
             <fieldset class="form-group">
