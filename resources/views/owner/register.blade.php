@@ -1,3 +1,14 @@
+<head>
+<meta charset='utf-8'>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href= "{{asset('/css/layout.css')}}">
+        <link href="{{ asset('/bootstrap/dist/css/bootstrap.css') }}" rel="stylesheet">
+        <script src="{{ asset('/bootstrap/dist/js/bootstrap.js') }}"></script>
+        <script src="{{ asset('/jquery/dist/js/jquery.min.js') }}"></script>
+        <script src="{{ asset('/jquery/dist/jquery.slim.min.js') }}"></script>
+</head>
+<body>
 @if (Session::has('error'))
     <div class="alert alert-success">
         <p>{{ Session::get('error') }}</p>
@@ -39,3 +50,4 @@
 @endforeach
 
 @endif
+</body>
