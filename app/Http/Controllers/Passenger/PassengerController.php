@@ -12,6 +12,10 @@ use Illuminate\Support\Facades\Input;
 class PassengerController extends Controller
 {
     //
+    public function __construct()
+	{
+		$this->middleware('auth');
+	}
     
     public function register(Request $request){
         

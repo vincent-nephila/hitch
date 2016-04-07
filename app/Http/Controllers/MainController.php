@@ -23,7 +23,15 @@ class MainController extends Controller
                 break;
             case env('USER_OWNER');
                 return view('owner.index',compact('user'));
+                break;
+            case env('USER_ADMIN');
+                return view('owner.index',compact('user'));
+                break;        
+            case env('USER_DRIVER');
+                return view('owner.index',compact('user'));
                 break;        
         }
     }
+    
+    
 }
