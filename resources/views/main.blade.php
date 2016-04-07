@@ -1,4 +1,4 @@
-<!doctype html>
+<!--doctype html>
 <html lang=''>
     <head>
         <meta charset='utf-8'>
@@ -12,17 +12,11 @@
         
         
         <script src="script.js"></script>
-        <style>
-            .footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 60px;
-    background-color: #f5f5f5;
-}
-        </style>
+
         <title>Hitch</title>
-    </head>
+    </head-->
+@extends('app')
+@section('content')
     <body>
 
         <div id='cssmenu'>
@@ -43,7 +37,13 @@
                 <img src="{{asset('/images/H2ride.png')}}" class="img-responsive" height= "350" width= "1000">
             </ul>
         </div>
+        <div>
+            This part is tricky
+        </div>
+        <div>
+            This on is super
+        </div>
 
-    </body>
-    <html>
-
+    <!--/body-->
+    <!--html-->
+@stop

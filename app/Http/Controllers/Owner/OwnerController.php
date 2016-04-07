@@ -13,6 +13,7 @@ class OwnerController extends Controller
 {
     //
 
+
     public function register(Request $request){
         
         $this->validate($request, [

@@ -17,10 +17,10 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/',function(){
         return view('main');
     });
-    Route::get('registerOwner',function(){ return view('owner.register');});
+    Route::get('registerOwner',['middleware' => 'guest',function(){ return view('owner.register');}]);
     Route::post('registerOwner','Owner\OwnerController@register');
     
-    Route::get('registerPassenger',function(){return view('passenger.register');});
+    Route::get('registerPassenger',['middleware' => 'guest',function(){return view('passenger.register');}]);
     Route::post('registerPassenger','Passenger\PassengerController@register');
     
     Route::get('confirm/{id}/{authkey}','RegisterController@verifyCode');
