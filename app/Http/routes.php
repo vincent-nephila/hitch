@@ -14,9 +14,9 @@
 Route::group(['middleware' => ['web']], function () {
     Route::auth();
     //Route::get('register/verify/{confirmation_code}','Auth\AuthController@verifyCode');
-    Route::get('/',function(){
+    Route::get('/',['middleware' => 'guest',function(){
         return view('main');
-    });
+    }]);
     Route::get('registerOwner',['middleware' => 'guest',function(){ return view('owner.register');}]);
     Route::post('registerOwner','Owner\OwnerController@register');
     
