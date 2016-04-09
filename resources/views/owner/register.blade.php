@@ -28,7 +28,7 @@
 @endif
 @if (Session::has('success'))
     <div class="alert alert-success">
-        <p>{{ Session::get('success') }}</p>
+        <p>{{ Session::get('succes s') }}</p>
     </div>
 @endif
 <div class="content1" style="padding-left: 740px; padding-top:150px; padding-right:100px;"  >
@@ -51,14 +51,16 @@
               <input type="text" class="form-control" name="mobile" placeholder="Contact No.">              
             </fieldset>
             <button type="submit" class="btn btn-primary">Submit</button>
+          
         </form>
+          <li>{{$error}}</li>
     </div>
 </div>
 </div>
 
 @if(count($errors)>0) 
 @foreach($errors->all() as $error)
-<li>{{$error}}</li>
+<!--<li>{{$error}}</li> -->
 @endforeach
 
 @endif  

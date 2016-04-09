@@ -97,10 +97,9 @@
     display: none;
 }
 body{
-    background: url(/images/home2.jpg);
-    background-size: 1290px 600px;
+    background: url(/images/high.jpg);
     /*background-size: cover;*/
-    /*background-size: 100% auto;*/  
+    background-size: 100% auto;  
     background-repeat: no-repeat;
     background-attachment: fixed;
     -webkit-background-size: cover;
@@ -132,6 +131,23 @@ body{
     -o-background-size: cover;
 }
 
+.plate {
+         margin-bottom: 20px;
+         height: auto;
+         width: auto;
+         
+}
+
+.logo {
+        
+         height: 320px;
+         width: auto;
+         
+}
+
+.last>a:hover{
+    color:#f96e5b;
+}
 /*
 @media screen and (max-width: 768px)
 {
@@ -148,8 +164,19 @@ body{
     -o-background-size: cover;
 }
  */
+ .col-md-7
+ {
+     padding-left: 170px;
+ }
+ .col-md-12{
+     padding-top: 70px;
+ }
+ 
+ .navbar-default{
+     background-color:#f96e5b;
+ }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 360px) {
     #cssmenu ul li {
         float: none;
         display: block;
@@ -171,4 +198,71 @@ body{
     #cssmenu ul li a:before {
         display: none;
     }
+    
+    
+    
+    body{
+    background: url(/images/high.jpg);
+    /*background-size: cover;*/
+    background-size: cover;  
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+/*
+    #stage{
+    background-color: rgba(0,0,0,0.50);
+    height: 600px;
+    width: 620px;
+    float:right; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+*/
+
+#VOwner{
+    /*background-color: #f96e5b;
+    background: url(/images/VOwner.png);
+    background-repeat: no-repeat; */
+    height: 150px;
+    width: 500px;
+    float: right;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+.plate {
+         margin-bottom: 20px;
+         height: auto;
+         width: 300px;
+         
+}
+
+.logo {
+        
+         height: 300px;
+         width: 300px;
+         
+}
+
+.last>a:hover{
+    color:#f96e5b;
+}
+
+.col-md-12{
+     padding-top: 10px;
+ }
+ 
+ .col-md-7{
+     padding-left: 0px;
+ }
+ col-md-4{
+     
+ }
+
 }

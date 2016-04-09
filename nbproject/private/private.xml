@@ -6,9 +6,13 @@
             <file>file:/home/roy/Desktop/hitch/resources/views/main.blade.php</file>
             <file>file:/home/roy/Desktop/hitch/resources/views/vincent.blade.php</file>
             <file>file:/home/roy/Desktop/hitch/app/Http/Controllers/MainController.php</file>
+            <file>file:/home/roy/Desktop/hitch/resources/views/owner/register.blade.php</file>
             <file>file:/home/roy/Desktop/hitch/resources/views/welcome.blade.php</file>
+            <file>file:/home/roy/Desktop/hitch/resources/views/owner/index.blade.php</file>
+            <file>file:/home/roy/Desktop/hitch/public/css/custom.css</file>
             <file>file:/home/roy/Desktop/hitch/app/Http/routes.php</file>
             <file>file:/home/roy/Desktop/hitch/resources/views/app.blade.php</file>
+            <file>file:/home/roy/Desktop/hitch/public/css/register.css</file>
             <file>file:/home/roy/Desktop/hitch/public/css/layout.css</file>
         </group>
     </open-files>

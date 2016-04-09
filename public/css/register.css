@@ -97,7 +97,7 @@
     display: none;
 }
 
-body {background: url(../driver.jpg);
+body {background: url(../images/driver.jpg);
     /*background-size: 1290px 600px;*/
     /*background-size: cover;*/
     background-size: 100% auto;
