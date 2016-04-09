@@ -19,7 +19,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::auth();
     Route::get('portal','MainController@index');
     Route::get('portal/suspendWarning',['middleware' => 'auth',function(){
-        if(\Auth::user()->status == env('STATUS_OK') | \Auth::user()->status == env('STATUS_PROCESS')){
+        if(! \Auth::user()->status == env('STATUS_SUSPENDED')){
             return redirect('portal');
         }
         else{
@@ -33,8 +33,18 @@ Route::group(['middleware' => ['web']], function () {
     //Owner
     Route::get('registerOwner',['middleware' => 'guest',function(){return view('owner.register');}]);
     Route::post('registerOwner','Owner\OwnerController@register');
+    Route::get('portal/owner/approval',['middleware' => 'auth',function(){
+        if(! \Auth::user()->status == env('STATUS_APPROVAL')){
+            return redirect('portal');
+        }
+        else{
+        return view('owner.approval');
+        }
+        
+        }]
+    );
     Route::get('portal/owner/requirement',['middleware' => 'auth',function(){
-        if(\Auth::user()->status == env('STATUS_OK')| \Auth::user()->status == env('STATUS_SUSPENDED')){
+        if(! \Auth::user()->status == env('STATUS_PROCESS')){
             return redirect('portal');
         }
         else{
@@ -43,6 +53,7 @@ Route::group(['middleware' => ['web']], function () {
         
         }]
     );
+
     
     //Passenger
     Route::get('registerPassenger',['middleware' => 'guest',function(){return view('passenger.register');}]);

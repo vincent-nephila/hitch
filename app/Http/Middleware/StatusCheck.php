@@ -19,6 +19,10 @@ class StatusCheck
         if(Auth::user()->status == env('STATUS_PROCESS')){
             return redirect('portal/owner/requirement');
         }
+        if(Auth::user()->status == env('STATUS_APPROVAL')){
+            return redirect('portal/owner/approval');
+        }
+
         if(Auth::user()->status == env('STATUS_SUSPENDED')){
             return redirect('portal/suspendWarning');
         }

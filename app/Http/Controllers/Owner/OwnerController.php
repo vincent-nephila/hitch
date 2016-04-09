@@ -12,8 +12,6 @@ use Illuminate\Support\Facades\Input;
 class OwnerController extends Controller
 {
     //
-
-
     public function register(Request $request){
         
         $this->validate($request, [
@@ -26,6 +24,7 @@ class OwnerController extends Controller
         ]);   
        
         $authkey = str_random(30);
+        $generator = str_random(5);
         
         $user = new User;
         $user->firstname = $request->firstname;
@@ -36,14 +35,15 @@ class OwnerController extends Controller
         $user->accesslevel = env('USER_OWNER');
         $user->confirmation_code=$authkey;
         $user->save();
+        $user->owner_id=$user->id.'-'.$generator;
+        $user->save();
         
         $email = User::where('confirmation_code',$authkey)->first();
-        
-       
-        Mail::send('welcome',['authkey'=>$authkey,'access'=>$email->id,'name'=>$email->firstname], function($message) {
+           
+        Mail::send('email.welcome',['authkey'=>$authkey,'access'=>$email->id,'name'=>$email->firstname], function($message) {
             $message->to(Input::get('email'), Input::get('firstname'))->subject('Welcome to Hitch');});
        
-        return redirect('register');
+        return redirect('congratulation');
     }
     
 }

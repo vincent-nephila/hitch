@@ -61,5 +61,5 @@
 <li>{{$error}}</li>
 @endforeach
 
-@endif
+@endif  
 </body>

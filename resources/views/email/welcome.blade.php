@@ -7,7 +7,7 @@
         <h2>Verify Your Email Address</h2>
 
         <div>
-            Hi {{$name}}
+            Hi {{$name}},
             Thanks for creating an account.
             We welcome you to Hitch.
             Please follow the link below to verify your email address

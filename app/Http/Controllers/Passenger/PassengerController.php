@@ -12,11 +12,6 @@ use Illuminate\Support\Facades\Input;
 class PassengerController extends Controller
 {
     //
-    public function __construct()
-	{
-		$this->middleware('auth');
-	}
-    
     public function register(Request $request){
         
         $this->validate($request, [
@@ -46,7 +41,7 @@ class PassengerController extends Controller
         $email = User::where('confirmation_code',$authkey)->first();
         
        
-        Mail::send('welcome',['authkey'=>$authkey,'access'=>$email->id,'name'=>$email->firstname], function($message) {
+        Mail::send('email.welcome',['authkey'=>$authkey,'access'=>$email->id,'name'=>$email->firstname], function($message) {
             $message->to(Input::get('email'), Input::get('firstname'))->subject('Welcome to Hitch');});
        
         return redirect('register');

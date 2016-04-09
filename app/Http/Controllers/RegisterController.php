@@ -1,7 +1,7 @@
 <?php   
 
 namespace App\Http\Controllers;
-
+use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Http\Request;
 
 use App\User;
@@ -27,10 +27,13 @@ class RegisterController extends Controller
         ]);   
         $matchfields=['id'=>$id,'confirmation_code'=>$authkey,'confirmed'=>0];
         $user=User::where($matchfields)->first();
+        
         $user->password = bcrypt($request->password);
         $user->confirmed = 1;
         $user->save();
-       
-        return redirect('login')->with('success', "Your account has been confirmed".$id);
+
+        \Auth::loginUsingId($id);
+                
+        return redirect('portal');
     }
 }
