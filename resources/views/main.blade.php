@@ -25,32 +25,7 @@
         
        
 
-        <div id='cssmenu'>
-            
-            <nav role="navigation" class="navbar navbar-default">
         
-        <div class="navbar-header">
-            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div> 
-                
-               <div id="navbarCollapse" class="collapse navbar-collapse">
-                        <ul class="nav navbar-nav">
-                        <li class='active'><a href='#'style="background-color: #f96e5b;"><span>Home</span></a></li>
-                        <li><a href='#'><span>Company</span></a></li>
-                        <li><a href='#'><span>Contact</span></a></li>
-                
-                        </ul>
-                        <ul class="nav navbar-nav navbar-right">
-                        <li><a href ="login" style="background-color: #f96e5b;" >Log In</a></li>
-                        </ul>
-                </div>         
-            </nav>
-    </div>
   
             <div class="container">
                 <div class="row">
@@ -58,17 +33,21 @@
                     </div>  
                 <div class="row">
                     <div class="col-md-7">
-                    <img src="{{asset('/images/hitch_logo.png')}}" class="logo">
-                     </div>
-                    <div class="col-md-4" style= " background-color: rgba(0,0,0,0.5); border-radius: 30px;">
+                        <div id="logo"></div>   
+                    <!--<img src="{{asset('/images/hitch_logo.png')}}" class="logo">
+                    -->
+                    </div> 
+                   
+                    <div class="col-md-5" style= " background-color: #fd6a62/*rgba(0,0,0,0.5)*/; border-radius: 30px;">
                     <h1 style="color: #ffffff; font-family: Open Sans; " > SIGN UP</h1>
                     <a href="registerOwner"> <img src="{{asset('/images/VOwner.png')}}" class="plate img-responsive"></a>
-                    <img src="{{asset('/images/H2ride.png')}}" class="plate img-responsive ">
+                    <a href="registerPassenger"><img src="{{asset('/images/H2ride.png')}}" class="plate img-responsive "></a>
                     </div>
-               
+                             
                 </div> 
             
                 </div>
+            </div>    
    
     </body>
     <!--html-->

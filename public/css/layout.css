@@ -97,7 +97,7 @@
     display: none;
 }
 body{
-    background: url(/images/high.jpg);
+    background: url(/images/yellow.png);
     /*background-size: cover;*/
     background-size: 100% auto;  
     background-repeat: no-repeat;
@@ -105,6 +105,11 @@ body{
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
+}
+
+.form-horizontal{
+    background:url(/images/pink.png);
+    
 }
 
 /*
@@ -135,7 +140,19 @@ body{
          margin-bottom: 20px;
          height: auto;
          width: auto;
+         -webkit-transition: all 0.5s ease;
+     -moz-transition: all 0.5s ease;
+       -o-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+          transition: all 0.5s ease;
          
+}
+.plate:hover {
+  -webkit-transform: rotate(-10deg);
+     -moz-transform: rotate(-10deg);
+       -o-transform: rotate(-10deg);
+      -ms-transform: rotate(-10deg);
+          transform: rotate(-10deg);
 }
 
 .logo {
@@ -168,6 +185,7 @@ body{
  {
      padding-left: 170px;
  }
+
  .col-md-12{
      padding-top: 70px;
  }
@@ -175,7 +193,40 @@ body{
  .navbar-default{
      background-color:#f96e5b;
  }
+ 
 
+
+/*.logo {
+  height: 200px;
+  width: 200px;
+ 
+  -webkit-transition: all 1s ease;
+     -moz-transition: all 1s ease;
+       -o-transition: all 1s ease;
+      -ms-transition: all 1s ease;
+          transition: all 1s ease;
+}
+ 
+.logo:hover {
+  width: 300px;
+  height: 300px;
+}
+
+*/
+.col-md-5{
+    height:auto;
+    width:450px;
+}
+#logo{ 
+    background-image: url('/images/test1.png');
+    height:300px;
+    width:300px;
+    transition: all .2s ease-in-out; }
+#logo:hover { 
+    background-image: url('/images/test2.png');
+     height:300px;
+    width:300px;
+    transform: scale(1.5); }
 @media screen and (max-width: 360px) {
     #cssmenu ul li {
         float: none;
